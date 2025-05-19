@@ -1,0 +1,206 @@
+/* APSwapTracker.css */
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Main container */
+.ap-tracker {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .ap-tracker {
+    padding: 1rem;
+  }
+}
+
+.tracker-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.tracker-header {
+  padding: 1rem 0;
+}
+
+.tracker-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .tracker-header h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Touch-friendly inputs for mobile */
+button,
+input,
+select,
+textarea {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+  min-height: 44px; /* Minimum touch target size */
+}
+
+/* Remove file input styling */
+input[type="file"] {
+  max-width: 100%;
+}
+
+/* Camera capture button */
+.camera-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.camera-button svg {
+  margin-right: 8px;
+}
+
+/* Offline indicator */
+.offline-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Quick action buttons */
+.quick-action {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  border: none;
+  margin: 0.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.quick-action:hover {
+  background-color: #bbdefb;
+}
+
+/* Status colors */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-not-started {
+  background-color: #e0e0e0;
+  color: #616161;
+}
+
+.status-in-progress {
+  background-color: #fff9c4;
+  color: #f57f17;
+}
+
+.status-completed {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.verification-not-verified {
+  background-color: #e0e0e0;
+  color: #616161;
+}
+
+.verification-verified {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.verification-issues {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+/* Status indicators */
+.status-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.status-dot-not-started {
+  background-color: #9e9e9e;
+}
+
+.status-dot-in-progress {
+  background-color: #ffd54f;
+}
+
+.status-dot-completed {
+  background-color: #66bb6a;
+}
+
+.status-dot-verified {
+  background-color: #66bb6a;
+}
+
+.status-dot-issues {
+  background-color: #ef5350;
+}
