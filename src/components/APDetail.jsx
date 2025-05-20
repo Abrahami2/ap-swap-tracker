@@ -1,4 +1,4 @@
-// src/components/APDetail.jsx - 
+// src/components/APDetail.jsx - COMPLETE FILE WITH MOBILE FIXES
 import React, { useState } from 'react';
 import './APDetail.css';
 
@@ -48,13 +48,22 @@ export const APDetail = ({
     }
   };
 
+  // Mobile focus handler for iOS issues
+  const handleMobileFocus = (e) => {
+    // Force iOS to properly focus on the input
+    e.target.style.transform = 'translateY(-1px)';
+    setTimeout(() => {
+      e.target.style.transform = 'translateY(0)';
+    }, 10);
+  };
+
   if (!ap) return null;
 
   return (
     <div className="ap-detail">
       <div className="ap-detail-header">
         <button className="ap-detail-back" onClick={onBack}>
-          ← Back to List
+          â Back to List
         </button>
         <h2>{ap.id} Details</h2>
       </div>
@@ -117,6 +126,9 @@ export const APDetail = ({
               value={ap.oldAPSerial || ''}
               onChange={(e) => onUpdateAP(ap.id, 'oldAPSerial', e.target.value)}
               placeholder="Enter old AP serial/tag number"
+              inputMode="text"
+              autoComplete="off"
+              onFocus={handleMobileFocus}
             />
           </div>
 
@@ -128,6 +140,9 @@ export const APDetail = ({
               value={ap.newAPSerial || ''}
               onChange={(e) => onUpdateAP(ap.id, 'newAPSerial', e.target.value)}
               placeholder="Enter new AP serial/tag number"
+              inputMode="text"
+              autoComplete="off"
+              onFocus={handleMobileFocus}
             />
           </div>
         </div>
@@ -141,6 +156,9 @@ export const APDetail = ({
               onChange={(e) => onUpdateAP(ap.id, 'notes', e.target.value)}
               placeholder="Add notes about the swap process..."
               rows={4}
+              inputMode="text"
+              autoComplete="off"
+              onFocus={handleMobileFocus}
             />
           </div>
         </div>
