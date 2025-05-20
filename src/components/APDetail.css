@@ -1,4 +1,4 @@
-/* src/components/APDetail.css - COMPLETE FILE */
+/* src/components/APDetail.css - COMPLETE FILE WITH MOBILE FIXES */
 .ap-detail {
   padding: 0.5rem;
   max-width: 768px;
@@ -175,4 +175,53 @@
   text-align: center;
   margin-top: 8px;
   font-style: italic;
+}
+
+/* Mobile input fixes */
+@media (max-width: 768px) {
+  /* Increase hit target size for better touch interaction */
+  .ap-detail-input,
+  .ap-detail-select,
+  .ap-detail-textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 12px;
+    margin-bottom: 16px;
+    -webkit-appearance: none; /* Removes default styling on iOS */
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  /* Fix for iOS textarea issues */
+  .ap-detail-textarea {
+    min-height: 120px; /* Taller on mobile */
+    border-radius: 8px;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling in textarea */
+  }
+  
+  /* Fix for iOS select issues */
+  .ap-detail-select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+  }
+  
+  /* Add extra spacing between fields on mobile */
+  .ap-detail-field {
+    margin-bottom: 20px;
+  }
+}
+
+/* Fix for input focus issues on mobile */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Active state for touch */
+.ap-detail-input:active,
+.ap-detail-textarea:active,
+.ap-detail-select:active {
+  border-color: #1976d2;
 }
