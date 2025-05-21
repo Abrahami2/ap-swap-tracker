@@ -1,4 +1,4 @@
-// components/ExportButton.jsx
+// components/ExportButton.jsx - UPDATED VERSION
 import React, { useState } from 'react';
 import './ExportButton.css';
 import { exportToExcel } from '../supabase';

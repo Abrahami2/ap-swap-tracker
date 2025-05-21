@@ -1,5 +1,4 @@
-// Updated APSwapTracker.jsx with your team members
-
+// src/APSwapTracker.jsx - NEW FILE
 import React, { useState, useEffect } from 'react';
 import './APSwapTracker.css';
 import { APList } from './components/APList';
@@ -7,9 +6,9 @@ import { APDetail } from './components/APDetail';
 import { Stats } from './components/Stats';
 import { Filters } from './components/Filters';
 import { ExportButton } from './components/ExportButton';
-import { initializeDatabase, saveAP, fetchAPs, uploadImage, exportToExcel } from './supabase';
+import { initializeDatabase, saveAP, fetchAPs, uploadImage } from './supabase';
 
-const APSwapTracker = () => {
+export const APSwapTracker = () => {
   // Initialize Supabase on component mount
   useEffect(() => {
     initializeDatabase();
@@ -219,7 +218,7 @@ const APSwapTracker = () => {
       ) : (
         <div className="tracker-container">
           <header className="tracker-header">
-            <h1>Kohl's Hollywood AP Swap Tracker</h1>
+            <h1>Kohl's Plantation AP Swap Tracker</h1>
           </header>
           
           <Stats stats={stats} />

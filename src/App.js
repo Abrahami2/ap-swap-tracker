@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import APSwapTracker from './APSwapTracker';
+import { APSwapTracker } from './APSwapTracker'; // Change from: import APSwapTracker from './APSwapTracker';
 import LoginScreen from './components/LoginScreen';
 import { isOnline } from './supabase';
 

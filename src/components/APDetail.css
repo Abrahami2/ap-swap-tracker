@@ -225,3 +225,110 @@ input:focus, textarea:focus, select:focus {
 .ap-detail-select:active {
   border-color: #1976d2;
 }
+
+/* Mobile-specific fixes - Enhanced versions */
+@media (max-width: 768px) {
+  /* Enhanced select styles for better touch experience */
+  .ap-detail-select {
+    /* Increase touch area and prevent iOS zoom */
+    min-height: 44px !important; 
+    font-size: 16px !important;
+    
+    /* Make the dropdown arrow more visible */
+    background-size: 20px;
+    background-position: right 8px center;
+    padding-right: 36px !important;
+    
+    /* Add visual feedback - make borders more visible */
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    
+    /* Prevent text from getting too close to the edges */
+    padding-left: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    /* Focus styling improvements */
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Different border colors for status options */
+  .ap-detail-select[value="Not Started"] {
+    border-color: #9e9e9e;
+  }
+  
+  .ap-detail-select[value="In Progress"] {
+    border-color: #ffd54f;
+  }
+  
+  .ap-detail-select[value="Completed"] {
+    border-color: #66bb6a;
+  }
+  
+  /* Improve back button touch target */
+  .ap-detail-back {
+    padding: 8px 12px;
+    font-size: 16px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  /* Improve image upload button */
+  .ap-detail-image-button {
+    min-height: 50px;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Add transparent tap highlight for better feedback */
+  .ap-detail-select:active,
+  .ap-detail-button:active,
+  .ap-detail-back:active,
+  .ap-detail-image-button:active {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Force hardware acceleration for smoother animations */
+  .ap-detail-select,
+  .ap-detail-input,
+  .ap-detail-textarea {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Add momentum scrolling for iOS */
+  .ap-detail {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better styling for active states */
+  .ap-detail-select:active,
+  .ap-detail-input:active {
+    background-color: rgba(25, 118, 210, 0.05);
+  }
+  
+  /* Add bottom spacing to avoid content being hidden by Safari's bottom bar */
+  .ap-detail-card {
+    margin-bottom: 80px;
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS only styles */
+  .ap-detail-select {
+    /* Enhanced iOS dropdown appearance */
+    background-color: #f9f9f9;
+  }
+  
+  /* Fix iOS Safari dropdown issues */
+  .ap-detail-select {
+    /* Better dropdown arrow placement for iOS */
+    background-position: calc(100% - 10px) center;
+  }
+}

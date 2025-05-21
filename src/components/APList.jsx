@@ -1,4 +1,4 @@
-// components/APList.jsx
+// Complete APList.jsx with Mobile Fixes
 import React from 'react';
 import './APList.css';
 
@@ -30,6 +30,32 @@ export const APList = ({
     }
   };
 
+  // Handle mobile select changes
+  const handleMobileStatusChange = (id, event) => {
+    const value = event.target.value;
+    
+    // Force blur to ensure iOS registers the change
+    event.target.blur();
+    
+    // Use timeout to ensure state updates properly
+    setTimeout(() => {
+      onStatusChange(id, value);
+    }, 50);
+  };
+
+  // Handle mobile assignment change
+  const handleMobileAssignChange = (id, event) => {
+    const value = event.target.value;
+    
+    // Force blur to ensure iOS registers the change
+    event.target.blur();
+    
+    // Use timeout to ensure state updates properly
+    setTimeout(() => {
+      onUpdateAP(id, 'assignedTo', value);
+    }, 50);
+  };
+
   // Mobile card view
   const renderMobileCards = () => {
     return (
@@ -51,7 +77,8 @@ export const APList = ({
                   <label>Tech:</label>
                   <select 
                     value={ap.assignedTo}
-                    onChange={(e) => onUpdateAP(ap.id, 'assignedTo', e.target.value)}
+                    onChange={(e) => handleMobileAssignChange(ap.id, e)}
+                    className="mobile-friendly-select"
                   >
                     {teamMembers.map((member) => (
                       <option key={member} value={member}>
@@ -77,9 +104,9 @@ export const APList = ({
                 </button>
                 
                 <select 
-                  className={`ap-card-status-select ${ap.status.toLowerCase().replace(/\s+/g, '-')}`}
+                  className={`ap-card-status-select ${ap.status.toLowerCase().replace(/\s+/g, '-')} mobile-friendly-select`}
                   value={ap.status}
-                  onChange={(e) => onStatusChange(ap.id, e.target.value)}
+                  onChange={(e) => handleMobileStatusChange(ap.id, e)}
                 >
                   <option value="Not Started">Not Started</option>
                   <option value="In Progress">In Progress</option>
@@ -148,7 +175,8 @@ export const APList = ({
                   <td>
                     <select 
                       value={ap.assignedTo}
-                      onChange={(e) => onUpdateAP(ap.id, 'assignedTo', e.target.value)}
+                      onChange={(e) => handleMobileAssignChange(ap.id, e)}
+                      className="mobile-friendly-select"
                     >
                       {teamMembers.map((member) => (
                         <option key={member} value={member}>
@@ -162,7 +190,8 @@ export const APList = ({
                       <div className={getStatusColor(ap.status)}></div>
                       <select 
                         value={ap.status}
-                        onChange={(e) => onStatusChange(ap.id, e.target.value)}
+                        onChange={(e) => handleMobileStatusChange(ap.id, e)}
+                        className="mobile-friendly-select"
                       >
                         <option value="Not Started">Not Started</option>
                         <option value="In Progress">In Progress</option>

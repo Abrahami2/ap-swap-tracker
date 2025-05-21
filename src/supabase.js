@@ -10,49 +10,48 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 // Initialize Supabase client
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Initial APs data with all 41 access points
+// Initial APs data with all 40 access points for Kohl's
 export const initialAPData = [
-  { id: "AP01", location: "MEN'S SECTION", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP02", location: "WOMEN'S SECTION", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP03", location: "JUNIORS", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP04", location: "ACCESSORIES", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP05", location: "BEAUTY", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP06", location: "SHOES", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP07", location: "CHILDREN'S WEAR", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP08", location: "HOME GOODS", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP09", location: "BEDDING", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP10", location: "KITCHEN", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP11", location: "LUGGAGE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP12", location: "JEWELRY", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP13", location: "INTIMATES", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP14", location: "HOSIERY", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP15", location: "ACTIVE WEAR", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP16", location: "PLUS SIZE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP17", location: "PETITES", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP18", location: "BOYS", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP19", location: "GIRLS", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP20", location: "INFANTS", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP21", location: "TOYS", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP22", location: "CLEARANCE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP23", location: "CUSTOMER SERVICE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP24", location: "CHECKOUT FRONT", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP25", location: "CHECKOUT REAR", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP26", location: "MAIN ENTRANCE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP27", location: "SIDE ENTRANCE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP28", location: "FITTING ROOM 1", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP29", location: "FITTING ROOM 2", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP30", location: "FITTING ROOM 3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP31", location: "STOCKROOM MAIN", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP32", location: "STOCKROOM REAR", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP33", location: "RECEIVING", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP34", location: "EMPLOYEE BREAK ROOM", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP35", location: "MAIN OFFICE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP36", location: "MANAGER OFFICE", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP37", location: "SERVER ROOM", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP38", location: "LOADING DOCK", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP39", location: "HALLWAY 1", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP40", location: "HALLWAY 2", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null },
-  { id: "AP41", location: "PARKING LOT", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "", completion_time: "", image_url: null }
+  { id: "AP01", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP02", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP03", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP04", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP05", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP06", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP07", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP08", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP09", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP10", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP11", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP12", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP13", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP14", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP15", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP16", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP17", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP18", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP19", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP20", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP21", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP22", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP23", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP24", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP25", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP26", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP27", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP28", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP29", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP30", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP31", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP32", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP33", location: "KOHLS PLANTATION MDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Main Distribution Frame, Kohls Computer Room", completion_time: "", image_url: null },
+  { id: "AP34", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP35", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP36", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP37", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP38", location: "KOHLS PLANTATION IDF", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, Kohls Wire Closet", completion_time: "", image_url: null },
+  { id: "AP39", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null },
+  { id: "AP40", location: "KOHLS PLANTATION IDF3", status: "Not Started", verification_status: "Not Verified", assigned_to: "", old_ap_serial: "", new_ap_serial: "", notes: "Intermediate Distribution Frame, additional wire closet", completion_time: "", image_url: null }
 ];
 
 // Image compression function
@@ -137,8 +136,8 @@ export const fetchAPs = async () => {
     console.log('Number of APs retrieved:', data.length);
     
     // Make sure we're getting all records
-    if (data.length < 41) {
-      console.warn(`WARNING: Only retrieved ${data.length} APs out of 41 expected`);
+    if (data.length < 40) {
+      console.warn(`WARNING: Only retrieved ${data.length} APs out of 40 expected`);
     }
     
     // Convert snake_case from database to camelCase for frontend
